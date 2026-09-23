@@ -97,6 +97,18 @@ h1{font-family:'Unbounded';font-weight:900;font-size:clamp(38px,6vw,72px);line-h
 .mini-arrow{margin-left:auto;font-size:22px;color:var(--sky);transition:.25s}
 .mini:hover .mini-arrow{transform:translateX(6px)}
 
+/* lead releases */
+.rels{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.rel{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;backdrop-filter:blur(12px);transition:.3s;display:flex;flex-direction:column}
+.rel:hover{transform:translateY(-6px);border-color:#38bdf855;box-shadow:0 20px 50px #00000099,0 0 30px #0ea5e922}
+.rel-img{position:relative;display:block;aspect-ratio:1/1;overflow:hidden}
+.rel-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}
+.rel:hover .rel-img img{transform:scale(1.05)}
+.rel-img::after{content:'';position:absolute;inset:auto 0 0 0;height:44px;background:linear-gradient(180deg,transparent,#0b1424)}
+.rel-img em{position:absolute;top:10px;left:10px;z-index:1;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:1px;color:#04121e;background:linear-gradient(90deg,var(--sky),var(--blue));padding:4px 10px;border-radius:99px}
+.rel h3{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.55;padding:14px 14px 8px;font-weight:600}
+.rel-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sky);padding:0 14px 16px;margin-top:auto}
+
 /* FAQ */
 .faq{max-width:780px;display:flex;flex-direction:column;gap:12px}
 details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;cursor:pointer;backdrop-filter:blur(12px)}
@@ -119,13 +131,14 @@ footer{border-top:1px solid var(--line);margin-top:30px;background:#020409cc}
 @media(max-width:940px){
   .hero{grid-template-columns:1fr;padding-top:48px}
   .cards,.duo{grid-template-columns:1fr 1fr}
+  .rels{grid-template-columns:1fr 1fr}
   .links{position:fixed;top:70px;left:0;right:0;background:#04070ef8;flex-direction:column;padding:18px;gap:6px;border-bottom:1px solid var(--line);display:none;text-align:center}
   .links.open{display:flex}
   .burger{display:flex}
   .w2{margin-left:0}.w3{margin-left:0}
 }
 @media(max-width:600px){
-  .cards,.duo{grid-template-columns:1fr}
+  .cards,.duo,.rels{grid-template-columns:1fr}
   .hero-btns .btn{width:100%}
   h1{font-size:36px}
 }
