@@ -83,17 +83,6 @@ h1{font-family:'Unbounded';font-weight:900;font-size:clamp(38px,6vw,72px);line-h
 .card h3{font-size:18px;margin-bottom:9px;font-weight:700}
 .card p{color:var(--mut);font-size:14px;line-height:1.65}
 
-/* team */
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.mate{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:14px;backdrop-filter:blur(12px);transition:.3s}
-.mate:hover{transform:translateY(-7px);border-color:#38bdf855;box-shadow:0 24px 60px #00000099}
-.mate.lead{border-color:#38bdf866;background:linear-gradient(180deg,#0ea5e922,#0b1424cc)}
-.ava{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-family:'Unbounded';font-weight:700;font-size:17px;color:#04121e;background:linear-gradient(135deg,var(--sky),var(--deep));box-shadow:0 8px 24px #0ea5e944}
-.mate h3{font-family:'JetBrains Mono',monospace;font-size:16px}
-.mate p{color:var(--mut);font-size:13px;margin-top:6px}
-.online{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sky);display:flex;align-items:center;gap:7px}
-.online i{width:7px;height:7px;border-radius:50%;background:var(--sky);box-shadow:0 0 8px var(--sky);animation:blink 1.8s infinite}
-
 /* duo mini cards */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .mini{display:flex;align-items:center;gap:16px;text-decoration:none;color:#fff;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;backdrop-filter:blur(12px);transition:.3s}
@@ -129,15 +118,14 @@ footer{border-top:1px solid var(--line);margin-top:30px;background:#020409cc}
 /* ADAPTIVE */
 @media(max-width:940px){
   .hero{grid-template-columns:1fr;padding-top:48px}
-  .cards,.team,.duo{grid-template-columns:1fr 1fr}
-  .mate.lead{grid-column:1/-1}
+  .cards,.duo{grid-template-columns:1fr 1fr}
   .links{position:fixed;top:70px;left:0;right:0;background:#04070ef8;flex-direction:column;padding:18px;gap:6px;border-bottom:1px solid var(--line);display:none;text-align:center}
   .links.open{display:flex}
   .burger{display:flex}
   .w2{margin-left:0}.w3{margin-left:0}
 }
 @media(max-width:600px){
-  .cards,.team,.duo{grid-template-columns:1fr}
+  .cards,.duo{grid-template-columns:1fr}
   .hero-btns .btn{width:100%}
   h1{font-size:36px}
 }
