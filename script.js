@@ -10,38 +10,38 @@ navLinks.querySelectorAll('a').forEach(a =>
 const sections = [...document.querySelectorAll('section[id]')];
 const navA = [...document.querySelectorAll('.links a')];
 window.addEventListener('scroll', () => {
-  const y = window.scrollY + 120;
+  const y = window.scrollY + 140;
   let cur = sections[0]?.id;
   sections.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
   navA.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
-  document.getElementById('nav').style.boxShadow = window.scrollY > 10 ? '0 10px 30px #ec489922' : 'none';
 });
 
 // Reveal on scroll
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
-}), { threshold: 0.12 });
+}), { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Pink petals canvas
-const c = document.getElementById('petals'), x = c.getContext('2d');
-let stars = [];
+// Faint binary drift background
+const c = document.getElementById('bg'), x = c.getContext('2d');
+let pts = [];
 function resize() {
   c.width = innerWidth; c.height = innerHeight;
-  stars = Array.from({ length: Math.min(120, innerWidth / 10) }, () => ({
+  pts = Array.from({ length: Math.min(90, innerWidth / 14) }, () => ({
     x: Math.random() * c.width, y: Math.random() * c.height,
-    r: Math.random() * 2.2 + .6, s: Math.random() * .5 + .15,
+    s: Math.random() * .35 + .1, t: Math.random() > .5 ? '1' : '0',
     o: Math.random() * Math.PI * 2
   }));
 }
 resize(); addEventListener('resize', resize);
 (function anim() {
   x.clearRect(0, 0, c.width, c.height);
-  stars.forEach(st => {
-    st.y += st.s; st.o += .01; if (st.y > c.height) st.y = 0;
-    x.globalAlpha = .25 + Math.abs(Math.sin(st.o)) * .35;
-    x.fillStyle = '#ec4899';
-    x.beginPath(); x.arc(st.x, st.y, st.r, 0, 7); x.fill();
+  x.font = '11px "JetBrains Mono", monospace';
+  pts.forEach(p => {
+    p.y += p.s; p.o += .008; if (p.y > c.height + 12) { p.y = -12; p.x = Math.random() * c.width; }
+    x.globalAlpha = .05 + Math.abs(Math.sin(p.o)) * .1;
+    x.fillStyle = '#4ade80';
+    x.fillText(p.t, p.x, p.y);
   });
   requestAnimationFrame(anim);
 })();
