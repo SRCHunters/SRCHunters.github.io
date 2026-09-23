@@ -3,34 +3,37 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SourceHunters — Reverse Engineering Team | Кряки чит-клиентов Minecraft</title>
-<meta name="description" content="SourceHunters — команда реверс-инженеров. Unpack, деобфускация, обход авторизации чит-клиентов Minecraft. Состав, релизы, Telegram." />
+<title>SourceHunters — Reverse Engineering Team</title>
+<meta name="description" content="SourceHunters — команда реверс-инженеров. Кряки чит-клиентов Minecraft: unpack, обход авторизации, чистые билды." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2306080c'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%234ade80' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2304070e'/><circle cx='16' cy='16' r='7' fill='none' stroke='%237dd3fc' stroke-width='2.4'/><circle cx='16' cy='16' r='2' fill='%2338bdf8'/></svg>">
 </head>
 <body>
 
 <canvas id="bg"></canvas>
+<div class="aurora a1"></div>
+<div class="aurora a2"></div>
+<div class="aurora a3"></div>
 
-<header class="topbar" id="topbar">
-  <div class="container bar-inner">
+<header class="nav" id="nav">
+  <div class="container nav-inner">
     <a href="#home" class="logo">
-      <span class="logo-mark">&gt;_</span>
-      <span class="logo-text">SOURCEHUNTERS<span class="logo-ext">.re</span></span>
+      <span class="logo-dot"></span>
+      <span class="logo-text">SOURCEHUNTERS</span>
     </a>
     <nav class="links" id="navLinks">
-      <a href="#home" class="active">home</a>
-      <a href="#arsenal">arsenal</a>
-      <a href="#members">members</a>
-      <a href="#media">media</a>
-      <a href="#downloads">downloads</a>
-      <a href="#faq">faq</a>
+      <a href="#home" class="active">Главная</a>
+      <a href="#arsenal">Арсенал</a>
+      <a href="#members">Members</a>
+      <a href="#media">Media</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <div class="bar-right">
-      <span class="status"><i></i>all systems operational</span>
+    <div class="nav-right">
+      <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener" class="btn btn-small">Telegram</a>
       <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -40,106 +43,138 @@
 <!-- HERO -->
 <section class="hero container" id="home">
   <div class="hero-left">
-    <p class="eyebrow">[ reverse engineering team // est. 2026 ]</p>
-    <h1>SOURCE<br>HUNTERS<span class="cursor">_</span></h1>
-    <p class="subtitle">Реверсим чит-клиенты Minecraft: снимаем протекторы, разбираем байткод, патчим проверки лицензии и HWID. Каждый релиз — чистый билд с разбором внутренностей.</p>
+    <span class="chip"><span class="pulse"></span> reverse engineering team</span>
+    <h1>ВСКРЫВАЕМ<br><span class="grad">ЛЮБОЙ</span> КЛИЕНТ</h1>
+    <p class="subtitle">SourceHunters — охотники за исходниками. Берём защищённые чит-клиенты Minecraft, снимаем протекторы и выпускаем чистые кряки. Быстро. Громко. Бесплатно.</p>
     <div class="hero-btns">
       <a href="#members" class="btn btn-primary">Состав команды</a>
-      <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener" class="btn btn-ghost">Telegram-канал</a>
+      <a href="#downloads" class="btn btn-ghost">Забрать файлы</a>
     </div>
-    <div class="sysline">
-      <span><b>target:</b> minecraft java clients</span>
-      <span><b>output:</b> clean cracked builds</span>
-      <span><b>price:</b> $0.00</span>
+    <div class="stats">
+      <div class="stat"><b>06</b><span>направлений взлома</span></div>
+      <div class="stat"><b>05</b><span>участников</span></div>
+      <div class="stat"><b>100%</b><span>бесплатно</span></div>
     </div>
   </div>
   <div class="hero-right">
-    <div class="disasm">
-      <div class="dis-head"><span class="dots"><i></i><i></i><i></i></span><span>ida_view — client-obf.jar</span><span class="bp">5 bp patched</span></div>
-      <pre class="dis-body"><span class="dim">0x004010 .text:004010</span>  <span class="op">call</span>    check_license
-<span class="dim">0x004015 .text:004015</span>  <span class="op">test</span>    eax, eax
-<span class="dim">0x004017 .text:004017</span>  <span class="jnz">jnz</span>     short kick_user
-<span class="dim">0x004019 .text:004019</span>  <span class="nop">nop  &lt;── patched by patcher666</span>
-<span class="dim">0x00401B .text:00401B</span>  <span class="op">call</span>    verify_hwid
-<span class="dim">0x004020 .text:004020</span>  <span class="nop">nop  &lt;── patched by zenixly</span>
-<span class="dim">0x004022 .text:004022</span>  <span class="op">jmp</span>     load_modules</pre>
-      <div class="dis-foot"><span>strings decrypted: 4 812</span><span class="ok">build: cracked.jar ✔</span></div>
+    <div class="win w1">
+      <div class="win-bar"><span class="win-title">unpack.exe</span><span class="win-x">—</span></div>
+      <p class="mono">client-obf.jar → deobfuscated</p>
+      <div class="progress"><i style="width:92%"></i></div>
+      <p class="mono dim">4 812 strings decrypted…</p>
+    </div>
+    <div class="win w2">
+      <div class="win-bar"><span class="win-title">auth_check</span><span class="ok-badge">bypassed</span></div>
+      <p class="mono big">HWID bind <span class="strike">removed</span> <span class="ok">✔</span></p>
+      <p class="mono dim">license server: no response needed</p>
+    </div>
+    <div class="win w3">
+      <span class="pulse"></span>
+      <p class="mono"><b>5 hunters</b> online · свежий кряк в TG</p>
     </div>
   </div>
 </section>
 
 <!-- ARSENAL -->
 <section class="container section" id="arsenal">
-  <p class="sec-label">// 01 — arsenal</p>
-  <h2 class="sec-title">Что мы умеем</h2>
-  <div class="rows">
-    <div class="row reveal"><span class="idx">01</span><div><h3>Unpack и деобфускация</h3><p>Снимаем упаковщики с .jar, чистим control-flow мусор, восстанавливаем читаемые классы и маппинги.</p></div><span class="tag">unpack</span></div>
-    <div class="row reveal"><span class="idx">02</span><div><h3>Обход авторизации</h3><p>Патчим проверки ключа, эмуляцию сервера лицензии и кики за невалидный ключ.</p></div><span class="tag">auth bypass</span></div>
-    <div class="row reveal"><span class="idx">03</span><div><h3>Снятие HWID</h3><p>Убираем привязку к железу, сбрасываем лимиты запусков и баны по железу.</p></div><span class="tag">hwid reset</span></div>
-    <div class="row reveal"><span class="idx">04</span><div><h3>Аудит начинки</h3><p>Проверяем, что клиент реально делает: стилер, майнер, кейлоггер. Разбор по строкам и импортам.</p></div><span class="tag">audit</span></div>
-    <div class="row reveal"><span class="idx">05</span><div><h3>Разблокировка функций</h3><p>Открываем заблокированные модули, конфиги и премиум-вкладки без ключа.</p></div><span class="tag">unlock</span></div>
-    <div class="row reveal"><span class="idx">06</span><div><h3>Обучение</h3><p>В телеграме показываем процесс: чтение байткода, поиск проверок, написание патчей.</p></div><span class="tag">learn</span></div>
+  <span class="chip">наш арсенал</span>
+  <h2 class="sec-title">ЧЕМ МЫ <span class="grad">РВЁМ ЗАЩИТУ</span></h2>
+  <div class="cards">
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span>
+      <h3>Unpack</h3><p>Сносим упаковщики с .jar, чистим мусорный control-flow, возвращаем читаемый код.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.8-1.3"/></svg></span>
+      <h3>Auth Bypass</h3><p>Патчим проверки ключа и эмуляцию сервера лицензии. Киков больше нет.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M9 20h6M12 16v4"/></svg></span>
+      <h3>HWID Reset</h3><p>Режем привязку к железу, сбрасываем лимиты и баны по железу.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M13 4l-2 16"/></svg></span>
+      <h3>Аудит начинки</h3><p>Палево: стилер? майнер? Разбираем клиент по строкам и импортам.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <h3>Clean Builds</h3><p>Каждый релиз проверяем на вирусы. Никаких майнеров — только кряк.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+      <h3>Unlock</h3><p>Открываем премиум-модули, конфиги и вкладки без всякого ключа.</p>
+    </div>
   </div>
 </section>
 
 <!-- MEMBERS -->
 <section class="container section" id="members">
-  <p class="sec-label">// 02 — members</p>
-  <h2 class="sec-title">Состав команды</h2>
-  <p class="sec-sub">5 человек. Каждый отвечает за свой участок реверса.</p>
-  <div class="roster">
-    <div class="member reveal"><span class="avatar">NC</span><div class="m-info"><h3>NetCrackHunter0101</h3><p>Founder / Lead Reverse Engineer</p></div><span class="m-status"><i></i>active</span></div>
-    <div class="member reveal"><span class="avatar">ZX</span><div class="m-info"><h3>zenixly</h3><p>Unpack Engineer / Deobfuscation</p></div><span class="m-status"><i></i>active</span></div>
-    <div class="member reveal"><span class="avatar">SL</span><div class="m-info"><h3>SINISTERLESS</h3><p>Security Analyst / QA</p></div><span class="m-status"><i></i>active</span></div>
-    <div class="member reveal"><span class="avatar">SC</span><div class="m-info"><h3>satived-csv</h3><p>Tool Developer</p></div><span class="m-status"><i></i>active</span></div>
-    <div class="member reveal"><span class="avatar">P6</span><div class="m-info"><h3>patcher666</h3><p>Patch Engineer / Auth Bypass</p></div><span class="m-status"><i></i>active</span></div>
+  <span class="chip">members</span>
+  <h2 class="sec-title">КОМАНДА <span class="grad">ОХОТНИКОВ</span></h2>
+  <p class="sec-sub">Пять человек — каждый закрывает свой участок.</p>
+  <div class="team">
+    <div class="mate lead reveal">
+      <span class="ava">NC</span>
+      <div><h3>NetCrackHunter0101</h3><p>Founder · Lead Reverse Engineer</p></div>
+      <span class="online"><i></i>active</span>
+    </div>
+    <div class="mate reveal">
+      <span class="ava">ZX</span>
+      <div><h3>zenixly</h3><p>Unpack Engineer</p></div>
+      <span class="online"><i></i>active</span>
+    </div>
+    <div class="mate reveal">
+      <span class="ava">SL</span>
+      <div><h3>SINISTERLESS</h3><p>Security Analyst</p></div>
+      <span class="online"><i></i>active</span>
+    </div>
+    <div class="mate reveal">
+      <span class="ava">SC</span>
+      <div><h3>satived-csv</h3><p>Tool Developer</p></div>
+      <span class="online"><i></i>active</span>
+    </div>
+    <div class="mate reveal">
+      <span class="ava">P6</span>
+      <div><h3>patcher666</h3><p>Patch Engineer</p></div>
+      <span class="online"><i></i>active</span>
+    </div>
   </div>
 </section>
 
-<!-- MEDIA -->
+<!-- MEDIA + DOWNLOADS -->
 <section class="container section" id="media">
-  <p class="sec-label">// 03 — media</p>
-  <h2 class="sec-title">Media</h2>
-  <p class="sec-sub">Свежие кряки, разборы и релизы — только в Telegram-канале.</p>
-  <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener" class="ext-card reveal">
-    <span class="ext-icon tg">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 2.7 12.1c-.8.3-.8 1.4.1 1.6l4.7 1.5 1.8 5.6c.3.8 1.3.9 1.8.2l2.6-3.1 4.9 3.6c.6.4 1.5.1 1.7-.6l3.2-14.6c.2-.9-.7-1.6-1.6-1.7zM8.6 13.2l9.5-7.4c.2-.2.5.1.3.3l-7.9 8.2-.3 3-1.6-4.1z"/></svg>
-    </span>
-    <span class="ext-text"><b>Telegram — NetCrackHunter</b><span>t.me/NetCrackHunter · кряки · разборы · релизы</span></span>
-    <span class="ext-go">open →</span>
-  </a>
-</section>
-
-<!-- DOWNLOADS -->
-<section class="container section" id="downloads">
-  <p class="sec-label">// 04 — downloads</p>
-  <h2 class="sec-title">Downloads</h2>
-  <p class="sec-sub">Файлы, релизы и исходники — в нашем GitHub.</p>
-  <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener" class="ext-card reveal">
-    <span class="ext-icon gh">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-    </span>
-    <span class="ext-text"><b>GitHub — NetworkCrackHunter</b><span>github.com/NetworkCrackHunter · релизы · исходники</span></span>
-    <span class="ext-go">open →</span>
-  </a>
+  <span class="chip">связь и файлы</span>
+  <h2 class="sec-title">ГДЕ НАС <span class="grad">НАЙТИ</span></h2>
+  <div class="duo" id="downloads">
+    <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener" class="mini reveal">
+      <span class="mini-ico tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 2.7 12.1c-.8.3-.8 1.4.1 1.6l4.7 1.5 1.8 5.6c.3.8 1.3.9 1.8.2l2.6-3.1 4.9 3.6c.6.4 1.5.1 1.7-.6l3.2-14.6c.2-.9-.7-1.6-1.6-1.7zM8.6 13.2l9.5-7.4c.2-.2.5.1.3.3l-7.9 8.2-.3 3-1.6-4.1z"/></svg></span>
+      <span class="mini-text"><b>Telegram</b><span>t.me/NetCrackHunter — кряки и разборы</span></span>
+      <span class="mini-arrow">→</span>
+    </a>
+    <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener" class="mini reveal">
+      <span class="mini-ico gh"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span>
+      <span class="mini-text"><b>GitHub</b><span>NetworkCrackHunter — релизы и исходники</span></span>
+      <span class="mini-arrow">→</span>
+    </a>
+  </div>
 </section>
 
 <!-- FAQ -->
 <section class="container section" id="faq">
-  <p class="sec-label">// 05 — faq</p>
-  <h2 class="sec-title">FAQ</h2>
+  <span class="chip">faq</span>
+  <h2 class="sec-title">ВОПРОСЫ — <span class="grad">ОТВЕТЫ</span></h2>
   <div class="faq">
-    <details open><summary>Чем занимается SourceHunters?</summary><p>Реверс-инжинирингом чит-клиентов Minecraft: unpack, анализ байткода, снятие привязок. Результаты и чистые билды публикуем в телеграме.</p></details>
-    <details><summary>Где забирать кряки?</summary><p>Все релизы выходят только в Telegram-канале (раздел media) и на GitHub (раздел downloads). Других зеркал у нас нет.</p></details>
-    <details><summary>Это безопасно?</summary><p>Каждый релиз проверяем на стилеры и майнеры перед публикацией. Но чужие jar запускайте осторожно — лучше на отдельном аккаунте.</p></details>
-    <details><summary>Можно предложить клиент на разбор?</summary><p>Да, кидайте название и версию в комментарии под постами в TG. Самые запрашиваемые разбираем в первую очередь.</p></details>
+    <details open><summary>Где забирать кряки?</summary><p>В Telegram-канале выходят разборы и релизы, файлы лежат на GitHub. Других зеркал нет.</p></details>
+    <details><summary>Это безопасно?</summary><p>Каждый билд проверяем на стилеры и майнеры. Но чужие jar гоняй осторожно — лучше на отдельном аккаунте.</p></details>
+    <details><summary>Можно предложить клиент на разбор?</summary><p>Да. Кидай название и версию в комменты под постами в TG — самые запрашиваемые пилим первыми.</p></details>
+    <details><summary>Сколько это стоит?</summary><p>Ноль. Все кряки SourceHunters бесплатны навсегда.</p></details>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="container foot">
-    <span><span class="logo-mark sm">&gt;_</span> © 2026 sourcehunters.re — reverse engineering team</span>
+    <span>© 2026 <b>SOURCEHUNTERS</b> — hunting sources since day one</span>
     <span class="foot-links">
       <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a>
       <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a>

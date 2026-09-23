@@ -36,11 +36,11 @@ function resize() {
 resize(); addEventListener('resize', resize);
 (function anim() {
   x.clearRect(0, 0, c.width, c.height);
-  x.font = '11px "JetBrains Mono", monospace';
+  x.font = '11px Inter, sans-serif';
   pts.forEach(p => {
     p.y += p.s; p.o += .008; if (p.y > c.height + 12) { p.y = -12; p.x = Math.random() * c.width; }
-    x.globalAlpha = .05 + Math.abs(Math.sin(p.o)) * .1;
-    x.fillStyle = '#4ade80';
+    x.globalAlpha = .05 + Math.abs(Math.sin(p.o)) * .09;
+    x.fillStyle = '#7dd3fc';
     x.fillText(p.t, p.x, p.y);
   });
   requestAnimationFrame(anim);
