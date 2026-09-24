@@ -58,6 +58,14 @@ h1 .soft{background:linear-gradient(120deg,var(--sky),var(--lav));-webkit-backgr
 .block{padding:40px 22px 6px}
 .block h2,.sub-h{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:18px;display:flex;align-items:center;gap:12px}
 .sub-h{margin-top:44px}
+.note{color:var(--mut);font-size:14px;margin:-6px 0 18px;max-width:700px}
+.body-p{color:var(--mut);font-size:14.5px;max-width:720px;margin-bottom:12px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 6px}
+.chips span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mut);border:1px solid var(--line);background:rgba(255,255,255,.03);padding:9px 18px;border-radius:99px;transition:.2s;cursor:default}
+.chips span:hover{color:var(--sky);border-color:rgba(125,211,252,.45);transform:translateY(-2px)}
+.cta{margin:40px 0 10px;padding:46px 34px;text-align:center;background:linear-gradient(135deg,rgba(56,130,246,.13),rgba(165,180,252,.07));border:1px solid rgba(125,211,252,.3);border-radius:24px}
+.cta h2{font-size:clamp(22px,4vw,32px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.cta p{color:var(--mut);margin-bottom:24px}
 .hnum{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--sky);background:rgba(125,211,252,.09);border:1px solid rgba(125,211,252,.25);border-radius:9px;padding:5px 11px}
 
 /* toc */
