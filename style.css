@@ -45,7 +45,7 @@ a:hover{color:#a5d6ff}
 /* плавное появление — скрываю только если есть js (класс js вешает инлайн-скрипт в head).
    без js всё видно сразу, ничего не пропадает */
 html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.reveal.vis{opacity:1;transform:none}
+html.js .reveal.vis{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
