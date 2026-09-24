@@ -34,7 +34,7 @@
   <section class="hero">
     <div>
       <p class="kicker">reverse-engineering team — <b>minecraft java clients</b>, since 2024</p>
-      <h1>Разбираем закрытые<br>чит-клиенты до исходников.</h1>
+      <h1>Разбираем закрытые<br><span class="grad">чит-клиенты до исходников.</span></h1>
       <p class="lede">Снимаем упаковщики, чистим обфускацию, вырезаем проверку ключа и привязку к железу. Каждый релиз — с разбором, хешем билда и пометкой, есть ли внутри мусор.</p>
       <div class="actions">
         <a href="releases.html" class="btn btn-solid">смотреть релизы</a>
@@ -43,7 +43,7 @@
       <p class="statusline">last: <b>exploit 0.5.2 — clean</b> <span class="dot">·</span> 21.09.26 <span class="dot">·</span> src + jar на github <span class="dot">·</span> вопросы — в комменты tg</p>
     </div>
     <!-- кусок реального лога с последнего разбора, 21.09 -->
-    <div class="term">
+    <div class="term reveal">
       <div class="term-bar"><span class="fn">sh-pipeline.log</span><span class="sz">2.1 kb</span></div>
 <div class="term-body"><span class="c-dim">$ python unpack.py exploit-0.5.2-obf.jar -o exploit-0.5.2.jar</span>
 <span class="c-ok">[+]</span> packer: custom, dumped 312 classes
@@ -58,7 +58,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block reveal">
     <h2><span class="n">01</span>разделы</h2>
     <p class="note">Всё лежит по отдельным страницам. Открывай в новой вкладке, как обычно.</p>
     <hr class="rule">
@@ -72,7 +72,7 @@
     </nav>
   </section>
 
-  <section class="block">
+  <section class="block reveal">
     <h2><span class="n">02</span>последние операции</h2>
     <p class="note">Коротко что разобрали в сентябре. Подробности — в tg-постах и на странице релизов.</p>
     <div class="tbl-wrap">
@@ -87,13 +87,13 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block reveal">
     <h2><span class="n">03</span>чем работаем</h2>
     <p class="stack"><b>unpack:</b> <span>Recaf</span>, <span>custom unpack.py</span> <b>· analysis:</b> <span>IDA Pro 8.4</span>, <span>Ghidra 11.1</span>, <span>dnSpy</span>, <span>JADX</span> <b>· dynamic:</b> <span>Frida</span>, <span>x64dbg</span>, <span>Wireshark</span> <b>· misc:</b> <span>Bytecode Viewer</span>, <span>python 3.12</span></p>
     <p class="note">Версии плавают, список дополняю по мере смены тулчейна. — nch</p>
   </section>
 
-  <div class="cta">
+  <div class="cta reveal">
     <p><b>t.me/NetCrackHunter</b> — свежие кряки выходят там. подпишись, иначе пропустишь.</p>
     <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener" class="btn" style="margin-left:auto">открыть tg -&gt;</a>
   </div>
