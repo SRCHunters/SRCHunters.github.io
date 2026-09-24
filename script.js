@@ -26,4 +26,10 @@
     });
   }, { threshold: 0.08 });
   els.forEach(function (el) { io.observe(el); });
+
+  // страховка: если observer по какой-то причине не сработал — показать всё через 1.5с,
+  // чтобы страница никогда не осталась пустой
+  setTimeout(function () {
+    document.querySelectorAll('.reveal:not(.vis)').forEach(function (el) { el.classList.add('vis'); });
+  }, 1500);
 })();
