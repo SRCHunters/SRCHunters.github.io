@@ -42,8 +42,9 @@ a:hover{color:#a5d6ff}
 
 .container{max-width:960px;margin:0 auto;padding:0 20px}
 
-/* плавное появление — вешаю класс reveal в html */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+/* плавное появление — скрываю только если есть js (класс js вешает инлайн-скрипт в head).
+   без js всё видно сразу, ничего не пропадает */
+html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.vis{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
