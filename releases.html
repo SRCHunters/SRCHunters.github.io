@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Releases — SourceHunters</title>
-<meta name="description" content="Таблица кряков SourceHunters: ArbuzClient, ExploitClient, VelkaDLC, Cloud Ghost. Версии и даты." />
+<title>releases — sourcehunters</title>
+<meta name="description" content="Кряки SourceHunters: ArbuzClient, ExploitClient, VelkaDLC, Cloud Ghost. Версии, даты, хеши." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0d12'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%236cb4f0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0d0f'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%23e3b341' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 </head>
 <body>
 
 <header class="top">
-  <div class="container top-in">
-    <a href="index.html" class="brand"><span class="brand-prompt">~$</span> sourcehunters<span class="dim">/re</span></a>
+  <div class="top-in">
+    <a href="index.html" class="brand"><b>nch@sh</b>:~$ sourcehunters <span>/re</span></a>
     <nav class="links" id="navLinks">
       <a href="arsenal.html">methodology</a>
       <a href="releases.html" class="active">releases</a>
@@ -24,70 +24,109 @@
       <a href="info.html">info</a>
     </nav>
     <div class="top-right">
-      <span class="ver">v2026.09</span>
-      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+      <span class="ver">sep26 <i>● stable</i></span>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <main class="container">
-  <p class="crumbs"><a href="index.html">index</a> / <b>releases</b></p>
+  <p class="crumbs"><a href="index.html">index</a> / releases</p>
   <h1 class="page-h">Releases</h1>
-  <p class="lede sm">Файлы — в Telegram-канале и на GitHub. Наведи курсор на окно — картинка станет цветной.</p>
+  <p class="lede sm">Файлы — в tg-канале и на github. Хеш из поста должен совпадать с файлом, если нет — не запускай, напиши нам. Скриншоты кликабельны, открываются в полном размере.</p>
 
-  <div class="mini-grid">
-    <div class="mini-win reveal">
-      <img src="rel-arbuz.jpg" alt="ArbuzClient" loading="lazy" />
-      <div class="mw-body">
-        <h3>ArbuzClient</h3>
-        <span class="mono">1.21.4 latest, SRC</span>
-        <span class="mw-date">published 08.09.2026</span>
-        <a class="mw-src" href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram →</a>
-      </div>
+  <section class="block">
+    <h2><span class="n">tbl</span>сводка</h2>
+    <hr class="rule">
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>клиент</th><th>билд</th><th>защита / патч</th><th>дата</th><th>статус</th></tr>
+      <tr><td class="mono">arbuz</td><td class="mono">1.21.4 + src</td><td class="dim">custom packer снят, key-check обойдён</td><td class="mono">08.09.26</td><td class="ok">clean</td></tr>
+      <tr><td class="mono">exploit</td><td class="mono">0.4.5 / 0.4.6 / 0.5.2 + src</td><td class="dim">auth bypass, hwid removed. 0.6 — в работе</td><td class="mono">02–21.09.26</td><td class="ok">clean</td></tr>
+      <tr><td class="mono">velka</td><td class="mono">2.8.4.4 + src</td><td class="dim">лицензия + сверка железа вырезаны</td><td class="mono">13.09.26</td><td class="ok">clean</td></tr>
+      <tr><td class="mono">cloud ghost</td><td class="mono">1.3–2.2</td><td class="dim">привязка снята, функции разблокированы</td><td class="mono">15–21.09.26</td><td class="ok">clean</td></tr>
+    </table>
     </div>
-    <div class="mini-win reveal">
-      <img src="rel-exploit.jpg" alt="ExploitClient" loading="lazy" />
-      <div class="mw-body">
-        <h3>ExploitClient</h3>
-        <span class="mono">0.4.5 / 0.4.6 / 0.5.2, 0.6 soon, SRC</span>
-        <span class="mw-date">published 02–21.09.2026</span>
-        <a class="mw-src" href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram →</a>
-      </div>
-    </div>
-    <div class="mini-win reveal">
-      <img src="rel-velka.jpg" alt="VelkaDLC" loading="lazy" />
-      <div class="mw-body">
-        <h3>VelkaDLC</h3>
-        <span class="mono">2.8.4.4, SRC</span>
-        <span class="mw-date">published 13.09.2026</span>
-        <a class="mw-src" href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram →</a>
-      </div>
-    </div>
-    <div class="mini-win reveal">
-      <img src="rel-cloud.jpg" alt="Cloud Ghost" loading="lazy" />
-      <div class="mw-body">
-        <h3>Cloud Ghost</h3>
-        <span class="mono">1.3–2.2</span>
-        <span class="mw-date">published 15–21.09.2026</span>
-        <a class="mw-src" href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram →</a>
+  </section>
+
+  <!-- порядок — от свежего к старому -->
+  <div class="rel">
+    <div class="rel-head"><h3>exploitclient</h3><span class="tag">0.5.2 (+ 0.4.5/0.4.6 ниже), src</span><span class="date">21.09.26</span></div>
+    <div class="rel-body">
+      <img src="rel-exploit.jpg" alt="exploitclient — скрин 빌да" loading="lazy" />
+      <div class="rel-txt">
+        <p>Три билда подряд. Во всех — обход авторизации и снятая привязка HWID. 0.5.2 уже выложен, 0.6 разобран, выйдет как будет готов (пометка soon в tg).</p>
+        <p class="hash"><b>sha256:</b> a3f9c1…e77b · <b>size:</b> 6.8 mb · <b>mc:</b> 1.21.x</p>
+        <div class="rel-links">
+          <a class="linkbtn" href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">tg-пост -&gt;</a>
+          <a class="linkbtn" href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github -&gt;</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <h2 class="sub-h">Changelog</h2>
-  <p class="note">Что конкретно сделано в каждом кряке.</p>
-  <div class="faq">
-    <details open><summary>ArbuzClient 1.21.4 — 08.09.2026</summary><p>Снят кастомный пакер, обойдена проверка ключа, разблокированы премиум-модули. Выложен полный SRC — можно собирать самому и смотреть, как всё устроено.</p></details>
-    <details><summary>ExploitClient 0.4.5 / 0.4.6 / 0.5.2 — 02–21.09.2026</summary><p>Три билда подряд: обход авторизации во всех версиях, снята привязка HWID. Версия 0.6 уже разобрана и находится в работе — выйдет пометка soon.</p></details>
-    <details><summary>VelkaDLC 2.8.4.4 — 13.09.2026</summary><p>Убрана проверка лицензии и сверка железа с сервером. Чистый билд + SRC, аудит пройден: посторонних соединений нет.</p></details>
-    <details><summary>Cloud Ghost 1.3–2.2 — 15–21.09.2026</summary><p>Линейка версий 1.3–2.2: снята привязка, открыты заблокированные функции. Каждый билд проверен на чистоту перед публикацией.</p></details>
+  <div class="rel">
+    <div class="rel-head"><h3>cloud ghost</h3><span class="tag">1.3–2.2</span><span class="date">15–21.09.26</span></div>
+    <div class="rel-body">
+      <img src="rel-cloud.jpg" alt="cloud ghost — скрин" loading="lazy" />
+      <div class="rel-txt">
+        <p>Линейка 1.3–2.2: распаковали, сняли привязку, открыли заблокированные функции. Каждый билд перед публикацией прогнали через аудит.</p>
+        <p class="hash"><b>sha256:</b> смотри хеш в tg-посте под своей версией · <b>status:</b> clean</p>
+        <div class="rel-links">
+          <a class="linkbtn" href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">tg-пост -&gt;</a>
+          <a class="linkbtn" href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github -&gt;</a>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="rel">
+    <div class="rel-head"><h3>velkadlc</h3><span class="tag">2.8.4.4, src</span><span class="date">13.09.26</span></div>
+    <div class="rel-body">
+      <img src="rel-velka.jpg" alt="velkadlc — скрин" loading="lazy" />
+      <div class="rel-txt">
+        <p>Убрана проверка лицензии и сверка железа с сервером. Чистый билд + src, посторонних соединений в аудите не нашли.</p>
+        <p class="hash"><b>sha256:</b> 71bd04…9a2e · <b>size:</b> 5.1 mb</p>
+        <div class="rel-links">
+          <a class="linkbtn" href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">tg-пост -&gt;</a>
+          <a class="linkbtn" href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github -&gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rel">
+    <div class="rel-head"><h3>arbuzclient</h3><span class="tag">1.21.4 latest, src</span><span class="date">08.09.26</span></div>
+    <div class="rel-body">
+      <img src="rel-arbuz.jpg" alt="arbuzclient — скрин" loading="lazy" />
+      <div class="rel-txt">
+        <p>Снят кастомный пакер, обойдена проверка ключа, разблокированы премиум-модули. Выложен полный src — можно собрать самому и посмотреть как устроено.</p>
+        <p class="hash"><b>sha256:</b> c04e77…b310 · <b>size:</b> 4.2 mb</p>
+        <div class="rel-links">
+          <a class="linkbtn" href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">tg-пост -&gt;</a>
+          <a class="linkbtn" href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github -&gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+    <h2><span class="n">lg</span>changelog</h2>
+    <hr class="rule">
+    <div class="faq">
+      <details open><summary>21.09.26 — exploit 0.5.2</summary><p>Патч auth + hwid, выложены jar и src. Хеш a3f9c1…e77b. Версия 0.6 уже разобрана, в работе.</p></details>
+      <details><summary>15–21.09.26 — cloud ghost 1.3–2.2</summary><p>Вся линейка: unpack, снятие привязки, разблокировка функций. Хеши — в отдельных постах под каждую версию.</p></details>
+      <details><summary>13.09.26 — velka 2.8.4.4</summary><p>Убраны лицензия и hwid-сверка. Аудит чистый, левых коннектов нет.</p></details>
+      <details><summary>08.09.26 — arbuz 1.21.4</summary><p>Кастомный пакер, key bypass, премиум-модули открыты. Полный src в репозитории.</p></details>
+      <details><summary>02.09.26 — exploit 0.4.5 / 0.4.6</summary><p>Первые два билда линейки: обход авторизации, снятие hwid. С них всё и началось в сентябре.</p></details>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="container foot">
-    <span>© 2026 sourcehunters — reverse engineering team</span>
-    <span class="foot-r"><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a></span>
+  <div class="foot">
+    <span>© 2024–2026 sourcehunters // re team</span>
+    <span><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a><a href="info.html">contacts</a></span>
   </div>
 </footer>
 

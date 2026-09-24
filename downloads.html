@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Downloads — SourceHunters</title>
-<meta name="description" content="GitHub SourceHunters: релизы и исходники. FAQ о кряках." />
+<title>downloads — sourcehunters</title>
+<meta name="description" content="Где забирать файлы SourceHunters, как ставить кряк, faq." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0d12'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%236cb4f0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0d0f'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%23e3b341' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 </head>
 <body>
 
 <header class="top">
-  <div class="container top-in">
-    <a href="index.html" class="brand"><span class="brand-prompt">~$</span> sourcehunters<span class="dim">/re</span></a>
+  <div class="top-in">
+    <a href="index.html" class="brand"><b>nch@sh</b>:~$ sourcehunters <span>/re</span></a>
     <nav class="links" id="navLinks">
       <a href="arsenal.html">methodology</a>
       <a href="releases.html">releases</a>
@@ -24,56 +24,66 @@
       <a href="info.html">info</a>
     </nav>
     <div class="top-right">
-      <span class="ver">v2026.09</span>
-      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+      <span class="ver">sep26 <i>● stable</i></span>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <main class="container">
-  <p class="crumbs"><a href="index.html">index</a> / <b>downloads</b></p>
+  <p class="crumbs"><a href="index.html">index</a> / downloads</p>
   <h1 class="page-h">Downloads</h1>
-  <p class="lede sm">Файлы и исходники — в репозитории.</p>
+  <p class="lede sm">Файлы и исходники — в репозитории. Других зеркал нет, всё что лежит на сторонних сайтах — не наше.</p>
 
   <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener" class="access">
-    <span class="access-ico gh"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span>
-    <span class="access-t"><b>github.com/NetworkCrackHunter</b><span>github — релизы · исходники</span></span>
-    <span class="access-go">open →</span>
+    <span class="k">gh //</span>
+    <span><b>github.com/NetworkCrackHunter</b><span class="s">релизы · исходники · хеши билдов</span></span>
+    <span class="go">open -&gt;</span>
+  </a>
+  <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener" class="access">
+    <span class="k">tg //</span>
+    <span><b>t.me/NetCrackHunter</b><span class="s">анонсы + файлы для тех, кому удобнее из tg</span></span>
+    <span class="go">open -&gt;</span>
   </a>
 
-  <h2 class="sub-h">Как ставить кряк</h2>
-  <p class="note">Три шага — от скачивания до запуска.</p>
-  <section class="steps">
-    <article class="step">
-      <h2><span class="hnum">1</span> Скачай</h2>
-      <p>Забери архив с кряком из Telegram-канала или релиза на GitHub. Сверь версию клиента и игры.</p>
-    </article>
-    <article class="step">
-      <h2><span class="hnum">2</span> Проверь</h2>
-      <p>Прогони jar через VirusTotal для спокойствия. Наши билды чистые, но привычка проверять — хорошая.</p>
-    </article>
-    <article class="step">
-      <h2><span class="hnum">3</span> Запусти</h2>
-      <p>Положи файл в папку versions, выбери профиль в лаунчере и играй. Ключ вводить не нужно — его больше нет.</p>
-    </article>
+  <section class="block">
+    <h2><span class="n">I</span>установка — 3 шага</h2>
+    <hr class="rule">
+    <section class="steps">
+      <article class="step">
+        <h3><span class="n">1</span>скачай</h3>
+        <p>Забери архив из tg-канала или релиза на github. Сверь версию клиента и версию игры, они должны совпадать.</p>
+      </article>
+      <article class="step">
+        <h3><span class="n">2</span>проверь</h3>
+        <p>Прогони jar через VirusTotal для спокойствия. Наши билды чистые, но привычка проверять чужие jar — хорошая. Хеш сверь с постом.</p>
+      </article>
+      <article class="step">
+        <h3><span class="n">3</span>запусти</h3>
+        <p>Положи файл в папку versions, выбери профиль в лаунчере и играй. Ключ вводить не нужно — его больше нет, мы его вырезали.</p>
+      </article>
+    </section>
   </section>
 
-  <h2 class="sub-h">FAQ</h2>
-  <div class="faq">
-    <details open><summary>Где забирать кряки?</summary><p>В Telegram-канале выходят разборы и релизы, файлы лежат на GitHub. Других зеркал нет.</p></details>
-    <details><summary>Это безопасно?</summary><p>Каждый билд проверяем на стилеры и майнеры. Но чужие jar запускайте осторожно — лучше на отдельном аккаунте.</p></details>
-    <details><summary>Можно предложить клиент на разбор?</summary><p>Да. Кидайте название и версию в комментарии под постами в TG — самые запрашиваемые разбираем в первую очередь.</p></details>
-    <details><summary>Сколько это стоит?</summary><p>Ноль. Все кряки SourceHunters бесплатны.</p></details>
-    <details><summary>Антивирус ругается на файл. Что делать?</summary><p>Кряки патчат чужой код — эвристика антивирусов часто срабатывает ложно. Проверь файл на VirusTotal и сравни хеш с постом в канале. Если хеши сошлись — всё в порядке.</p></details>
-    <details><summary>Клиент не запускается. Куда писать?</summary><p>В комментарии под релизным постом в TG: укажи версию игры, лаунчер и текст ошибки. Самые частые проблемы разбираем отдельным постом.</p></details>
-    <details><summary>Исходники можно использовать в своих проектах?</summary><p>Да, для обучения и некоммерческого использования. Единственная просьба — указывать авторство SourceHunters.</p></details>
-  </div>
+  <section class="block">
+    <h2><span class="n">F</span>faq</h2>
+    <hr class="rule">
+    <div class="faq">
+      <details open><summary>Где забирать кряки?</summary><p>В tg-канале выходят разборы и релизы, файлы лежат на github. Других зеркал нет.</p></details>
+      <details><summary>Это безопасно?</summary><p>Каждый билд проверяем на стилеры и майнеры. Но чужие jar всё равно запускай осторожно — лучше на отдельном аккаунте.</p></details>
+      <details><summary>Можно предложить клиент на разбор?</summary><p>Да. Кидай название и версию в комменты под постами в tg — самые запрашиваемые разбираем в первую очередь.</p></details>
+      <details><summary>Сколько стоит?</summary><p>Ноль. Все кряки бесплатны, ключей и подписок нет.</p></details>
+      <details><summary>Антивирус ругается. Что делать?</summary><p>Кряки патчат чужой код, эвристика часто срабатывает ложно. Проверь файл на VirusTotal и сравни хеш с постом в канале. Сошёлся — всё в порядке.</p></details>
+      <details><summary>Клиент не запускается. Куда писать?</summary><p>В комменты под релизным постом: версия игры, лаунчер, текст ошибки. Частые проблемы разбираем отдельным постом.</p></details>
+      <details><summary>Можно использовать src в своих проектах?</summary><p>Да, для обучения и некоммерческого использования. Просьба одна — указывать авторство sourcehunters.</p></details>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="container foot">
-    <span>© 2026 sourcehunters — reverse engineering team</span>
-    <span class="foot-r"><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a></span>
+  <div class="foot">
+    <span>© 2024–2026 sourcehunters // re team</span>
+    <span><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a><a href="info.html">contacts</a></span>
   </div>
 </footer>
 

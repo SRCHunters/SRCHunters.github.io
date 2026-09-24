@@ -1,15 +1,14 @@
-// Mobile menu
-const burger = document.getElementById('burger');
-const navLinks = document.getElementById('navLinks');
-if (burger && navLinks) {
-  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => navLinks.classList.remove('open'))
-  );
-}
-
-// Reveal on scroll
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
-}), { threshold: 0.05 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// меню на мобилке. больше тут ничего и не надо, сайт статика.
+(function () {
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('navLinks');
+  if (!burger || !nav) return;
+  burger.addEventListener('click', function () {
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nav.classList.remove('open');
+    });
+  });
+})();

@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Media — SourceHunters</title>
-<meta name="description" content="Telegram SourceHunters: разборы, анонсы релизов, обсуждение." />
+<title>media — sourcehunters</title>
+<meta name="description" content="Telegram SourceHunters: разборы, релизы, гайды по реверсу." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0d12'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%236cb4f0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0d0f'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%23e3b341' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 </head>
 <body>
 
 <header class="top">
-  <div class="container top-in">
-    <a href="index.html" class="brand"><span class="brand-prompt">~$</span> sourcehunters<span class="dim">/re</span></a>
+  <div class="top-in">
+    <a href="index.html" class="brand"><b>nch@sh</b>:~$ sourcehunters <span>/re</span></a>
     <nav class="links" id="navLinks">
       <a href="arsenal.html">methodology</a>
       <a href="releases.html">releases</a>
@@ -24,50 +24,43 @@
       <a href="info.html">info</a>
     </nav>
     <div class="top-right">
-      <span class="ver">v2026.09</span>
-      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+      <span class="ver">sep26 <i>● stable</i></span>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <main class="container">
-  <p class="crumbs"><a href="index.html">index</a> / <b>media</b></p>
+  <p class="crumbs"><a href="index.html">index</a> / media</p>
   <h1 class="page-h">Media</h1>
-  <p class="lede sm">Единственный канал связи. Разборы, анонсы релизов, обсуждение.</p>
+  <p class="lede sm">Единственный канал связи. Разборы, релизы, гайды. Посты — несколько раз в неделю, по мере готовности материала. Комменты открыты.</p>
 
   <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener" class="access">
-    <span class="access-ico tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 2.7 12.1c-.8.3-.8 1.4.1 1.6l4.7 1.5 1.8 5.6c.3.8 1.3.9 1.8.2l2.6-3.1 4.9 3.6c.6.4 1.5.1 1.7-.6l3.2-14.6c.2-.9-.7-1.6-1.6-1.7zM8.6 13.2l9.5-7.4c.2-.2.5.1.3.3l-7.9 8.2-.3 3-1.6-4.1z"/></svg></span>
-    <span class="access-t"><b>t.me/NetCrackHunter</b><span>telegram — кряки · разборы · релизы</span></span>
-    <span class="access-go">open →</span>
+    <span class="k">tg //</span>
+    <span><b>t.me/NetCrackHunter</b><span class="s">кряки · разборы · релизы с хешами</span></span>
+    <span class="go">open -&gt;</span>
   </a>
 
-  <h2 class="sub-h">Рубрики канала</h2>
-  <p class="note">Что выходит в TG и как часто.</p>
-  <section class="steps">
-    <article class="step">
-      <h2>Разборы</h2>
-      <p>Вскрываем очередной клиент по косточкам: чем защищён, где проверки, есть ли стилер. Со скриншотами декомпилята и пояснениями.</p>
-    </article>
-    <article class="step">
-      <h2>Релизы</h2>
-      <p>Готовые кряки и SRC: версия, дата, что пропатчено. Каждый релиз — отдельным постом с хешем билда.</p>
-    </article>
-    <article class="step">
-      <h2>Гайды</h2>
-      <p>Учим реверсу с нуля: как распаковать jar, читать байткод, искать проверки лицензии и писать первые патчи.</p>
-    </article>
-    <article class="step">
-      <h2>Новости</h2>
-      <p>Что нового в мире читов и защит: обновления протекторов, сливы, предупреждения о скам-клиентах с майнерами.</p>
-    </article>
+  <section class="block">
+    <h2><span class="n">R</span>рубрики</h2>
+    <hr class="rule">
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>рубрика</th><th>что выходит</th><th>как часто</th></tr>
+      <tr><td class="mono">разборы</td><td class="dim">вскрываем клиент: защита, проверки, есть ли стилер. со скринами декомпилята</td><td class="mono">1–2 / нед</td></tr>
+      <tr><td class="mono">релизы</td><td class="dim">готовые кряки и src: версия, дата, что пропатчено + sha256</td><td class="mono">по готовности</td></tr>
+      <tr><td class="mono">гайды</td><td class="dim">реверс с нуля: распаковать jar, читать байткод, искать проверки, писать патчи</td><td class="mono">1 / нед</td></tr>
+      <tr><td class="mono">новости</td><td class="dim">обновления протекторов, сливы, предупреждения о скам-клиентах с майнерами</td><td class="mono">по факту</td></tr>
+    </table>
+    </div>
+    <p class="body-p">Предложить клиент на разбор можно в комментах под любым постом — самые запрашиваемые разбираем в первую очередь. Текст ошибки при запуске кидай туда же, с версией игры и лаунчером.</p>
   </section>
-  <p class="body-p">Посты выходят по мере готовности материала — обычно несколько раз в неделю. Комментарии открыты: можно предлагать клиенты на разбор и задавать вопросы.</p>
 </main>
 
 <footer>
-  <div class="container foot">
-    <span>© 2026 sourcehunters — reverse engineering team</span>
-    <span class="foot-r"><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a></span>
+  <div class="foot">
+    <span>© 2024–2026 sourcehunters // re team</span>
+    <span><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a><a href="info.html">contacts</a></span>
   </div>
 </footer>
 

@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Methodology — SourceHunters</title>
-<meta name="description" content="Методология SourceHunters: unpack, деобфускация, обход авторизации, снятие HWID, аудит." />
+<title>methodology — sourcehunters</title>
+<meta name="description" content="Как разбираем клиенты: unpack, деобфускация, обход авторизации, снятие HWID, аудит." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0d12'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%236cb4f0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0d0f'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%23e3b341' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 </head>
 <body>
 
 <header class="top">
-  <div class="container top-in">
-    <a href="index.html" class="brand"><span class="brand-prompt">~$</span> sourcehunters<span class="dim">/re</span></a>
+  <div class="top-in">
+    <a href="index.html" class="brand"><b>nch@sh</b>:~$ sourcehunters <span>/re</span></a>
     <nav class="links" id="navLinks">
       <a href="arsenal.html" class="active">methodology</a>
       <a href="releases.html">releases</a>
@@ -24,65 +24,80 @@
       <a href="info.html">info</a>
     </nav>
     <div class="top-right">
-      <span class="ver">v2026.09</span>
-      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+      <span class="ver">sep26 <i>● stable</i></span>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <main class="container">
-  <p class="crumbs"><a href="index.html">index</a> / <b>methodology</b></p>
+  <p class="crumbs"><a href="index.html">index</a> / methodology</p>
   <h1 class="page-h">Methodology</h1>
-  <p class="lede sm">Стандартный цикл разбора одного клиента. Каждый шаг фиксируем и показываем в канале.</p>
+  <p class="lede sm">Обычный цикл разбора одного клиента. Порядок почти всегда одинаковый, отличается только протектор и наглость проверки лицензии. Каждый шаг фиксируем и показываем в канале.</p>
 
-  <section class="steps">
+  <section class="steps" style="margin-top:18px">
     <article class="step">
-      <h2><span class="hnum">01</span> Unpack</h2>
-      <p>Снимаем упаковщик с .jar и выгружаем оригинальные классы в открытом виде. Дальше работаем только с распакованным билдом.</p>
-<pre class="code"><span class="c-dim">$</span> python unpack.py client-obf.jar -o client-clean.jar
-<span class="c-ok">[+]</span> protector identified: custom packer
+      <h3><span class="n">01</span>unpack</h3>
+      <p>Снимаем упаковщик с .jar, выгружаем оригинальные классы в открытом виде. Дальше работаем только с распакованным билдом, обфусцированный сразу в архив.</p>
+<pre>$ python unpack.py client-obf.jar -o client.jar
 <span class="c-ok">[+]</span> dumped 312 classes, 0 encrypted resources left</pre>
     </article>
     <article class="step">
-      <h2><span class="hnum">02</span> Deobfuscation</h2>
-      <p>Убираем переименование, мусорный control-flow и шифрованные строки. Восстанавливаем читаемые имена и маппинги.</p>
+      <h3><span class="n">02</span>deobfuscation</h3>
+      <p>Чистим переименование, мусорный control-flow и шифрованные строки. Восстанавливаем читаемые имена, где получается — маппинги. Руками правим то, что скрипт не вытянул.</p>
     </article>
     <article class="step">
-      <h2><span class="hnum">03</span> Auth bypass</h2>
-      <p>Находим проверку ключа и эмуляцию сервера лицензии. Патчим переход так, чтобы невалидный ключ больше не кикал.</p>
-<pre class="code"><span class="c-dim">.text:004015  test  eax, eax</span>
-<span class="c-del">- .text:004017  jnz   short kick_user</span>
+      <h3><span class="n">03</span>auth bypass</h3>
+      <p>Ищем проверку ключа: обычно один if в AuthManager и дерганье сервера. Патчим переход, чтобы невалидный ключ больше не кикал.</p>
+<pre>.text:004015  test  eax, eax
+<span class="c-red">- .text:004017  jnz   short kick_user</span>
 <span class="c-ok">+ .text:004017  nop  ; check neutralized</span></pre>
     </article>
     <article class="step">
-      <h2><span class="hnum">04</span> HWID reset</h2>
-      <p>Вырезаем привязку к железу: сбор отпечатка машины и сверку с сервером. Сбрасываем лимиты запусков.</p>
+      <h3><span class="n">04</span>hwid reset</h3>
+      <p>Вырезаем привязку к железу: сбор отпечатка и сверку с сервером. Заодно сбрасываем лимиты запусков, если автор их прикрутил.</p>
     </article>
     <article class="step">
-      <h2><span class="hnum">05</span> Audit</h2>
-      <p>Проверяем, что клиент делает помимо заявленного: исходящие соединения, автозагрузка, сторонние пейлоады. Стилер или майнер — в релиз не идёт, пишем разбор.</p>
+      <h3><span class="n">05</span>audit</h3>
+      <p>Смотрим, что клиент делает кроме заявленного: исходящие коннекты, автозагрузка, сторонние пейлоады. Нашли стилер или майнер — в релиз не идёт, вместо билда выходит разбор с пруфами.</p>
     </article>
     <article class="step">
-      <h2><span class="hnum">06</span> Publish</h2>
-      <p>Собираем чистый билд, прикладываем список патчей и публикуем: анонс в Telegram, файлы на GitHub.</p>
+      <h3><span class="n">06</span>publish</h3>
+      <p>Собираем чистый билд, считаем sha256, пишем список патчей. Анонс в tg, файлы на github. Хеш в посте должен совпадать с файлом, проверяйте.</p>
     </article>
   </section>
 
-  <h2 class="sub-h"><span class="hnum">T</span> Инструменты</h2>
-  <p class="body-p">Каждый этап закрыт своим инструментом: распаковка — кастомные скрипты и Recaf, анализ байткода — dnSpy и IDEA с плагинами, трафик — Wireshark, строки и импорты — собственные парсеры на Python.</p>
-  <div class="chips">
-    <span>IDA Pro</span><span>Ghidra</span><span>dnSpy</span><span>Recaf</span><span>JADX</span><span>Frida</span><span>Wireshark</span><span>Python</span>
-  </div>
+  <section class="block">
+    <h2><span class="n">T</span>инструменты по этапам</h2>
+    <hr class="rule">
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>этап</th><th>чем делаем</th><th>комментарий</th></tr>
+      <tr><td class="mono">unpack</td><td class="mono">Recaf, unpack.py</td><td class="dim">скрипт свой, под каждый пакер допиливаем</td></tr>
+      <tr><td class="mono">analysis</td><td class="mono">IDA 8.4, Ghidra 11.1, dnSpy, JADX</td><td class="dim">байткод — в основном в Recaf + IDEA</td></tr>
+      <tr><td class="mono">dynamic</td><td class="mono">Frida, x64dbg, Wireshark</td><td class="dim">трафик смотрим всегда, там половина ответов</td></tr>
+      <tr><td class="mono">strings</td><td class="mono">python 3.12, свои парсеры</td><td class="dim">импорты/строки — первым делом</td></tr>
+    </table>
+    </div>
+  </section>
 
-  <h2 class="sub-h"><span class="hnum">W</span> Как читать наши разборы</h2>
-  <p class="body-p">Каждый разбор устроен одинаково: сначала контекст — что за клиент и чем защищён. Дальше — unpack: чем был упакован и как сняли. Затем — находки: проверки лицензии, HWID, скрытые модули. В конце — вердикт: чистый билд или помойка со стилером.</p>
-  <p class="body-p">Если в клиенте находим вредоносный код — публикуем разбор с доказательствами: скриншоты декомпилята, строки, адреса C2. Такие клиенты в релиз не идут никогда.</p>
+  <section class="block">
+    <h2><span class="n">W</span>как читать наши разборы</h2>
+    <hr class="rule">
+    <p class="body-p">Каждый разбор устроен одинаково. Сначала контекст: что за клиент и чем защищён. Дальше unpack: чем был упакован и как сняли. Затем находки: проверки лицензии, HWID, скрытые модули. В конце вердикт: чистый билд или помойка со стилером.</p>
+    <p class="body-p">Если находим вредоносный код — публикуем разбор с доказательствами: куски декомпилята, строки, адреса. Такие клиенты в релиз не идут никогда, даже если их сильно просят.</p>
+  </section>
+
+  <div class="cta">
+    <p>остались вопросы по этапам — <b>кидай в комменты tg</b>, разберём на примере.</p>
+    <a href="releases.html" class="btn" style="margin-left:auto">к релизам -&gt;</a>
+  </div>
 </main>
 
 <footer>
-  <div class="container foot">
-    <span>© 2026 sourcehunters — reverse engineering team</span>
-    <span class="foot-r"><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a></span>
+  <div class="foot">
+    <span>© 2024–2026 sourcehunters // re team</span>
+    <span><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a><a href="info.html">contacts</a></span>
   </div>
 </footer>
 
