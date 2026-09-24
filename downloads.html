@@ -4,66 +4,55 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Downloads — SourceHunters</title>
-<meta name="description" content="GitHub SourceHunters: релизы, исходники. Частые вопросы о кряках." />
+<meta name="description" content="GitHub SourceHunters: релизы и исходники. FAQ о кряках." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2304070e'/><circle cx='16' cy='16' r='7' fill='none' stroke='%237dd3fc' stroke-width='2.4'/><circle cx='16' cy='16' r='2' fill='%2338bdf8'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0d12'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%236cb4f0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 </head>
 <body>
 
-<canvas id="bg"></canvas>
-<div class="aurora a1"></div>
-<div class="aurora a2"></div>
-
-<header class="nav" id="nav">
-  <div class="container nav-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-dot"></span>
-      <span class="logo-text">SOURCEHUNTERS</span>
-    </a>
-    <div class="nav-right">
-      <a href="index.html#explorer" class="btn btn-small">‹ Проводник</a>
+<header class="top">
+  <div class="container top-in">
+    <a href="index.html" class="brand"><span class="brand-prompt">~$</span> sourcehunters<span class="dim">/re</span></a>
+    <nav class="links" id="navLinks">
+      <a href="arsenal.html">methodology</a>
+      <a href="releases.html">releases</a>
+      <a href="media.html">media</a>
+      <a href="downloads.html" class="active">downloads</a>
+    </nav>
+    <div class="top-right">
+      <span class="ver">v2026.09</span>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main>
-<div class="container crumbs"><a href="index.html">Главная</a> / <a href="index.html#explorer">Проводник</a> / <b>Downloads</b></div>
+<main class="container">
+  <p class="crumbs"><a href="index.html">index</a> / <b>downloads</b></p>
+  <h1 class="page-h">Downloads</h1>
+  <p class="lede sm">Файлы и исходники — в репозитории.</p>
 
-<section class="container section" id="downloads">
-  <span class="chip">downloads</span>
-  <h2 class="sec-title">ЗАБРАТЬ <span class="grad">ФАЙЛЫ</span></h2>
-  <p class="sec-sub">Релизы и исходники — в нашем GitHub.</p>
-  <div class="duo">
-    <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener" class="mini reveal">
-      <span class="mini-ico gh"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span>
-      <span class="mini-text"><b>GitHub</b><span>NetworkCrackHunter — релизы и исходники</span></span>
-      <span class="mini-arrow">→</span>
-    </a>
-  </div>
-</section>
+  <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener" class="access">
+    <span class="access-ico gh"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span>
+    <span class="access-t"><b>github.com/NetworkCrackHunter</b><span>github — релизы · исходники</span></span>
+    <span class="access-go">open →</span>
+  </a>
 
-<section class="container section" id="faq">
-  <span class="chip">faq</span>
-  <h2 class="sec-title">ВОПРОСЫ — <span class="grad">ОТВЕТЫ</span></h2>
-  <div class="faq" style="margin-top:30px">
+  <h2 class="sub-h">FAQ</h2>
+  <div class="faq">
     <details open><summary>Где забирать кряки?</summary><p>В Telegram-канале выходят разборы и релизы, файлы лежат на GitHub. Других зеркал нет.</p></details>
-    <details><summary>Это безопасно?</summary><p>Каждый билд проверяем на стилеры и майнеры. Но чужие jar гоняй осторожно — лучше на отдельном аккаунте.</p></details>
-    <details><summary>Можно предложить клиент на разбор?</summary><p>Да. Кидай название и версию в комменты под постами в TG — самые запрашиваемые пилим первыми.</p></details>
-    <details><summary>Сколько это стоит?</summary><p>Ноль. Все кряки SourceHunters бесплатны навсегда.</p></details>
+    <details><summary>Это безопасно?</summary><p>Каждый билд проверяем на стилеры и майнеры. Но чужие jar запускайте осторожно — лучше на отдельном аккаунте.</p></details>
+    <details><summary>Можно предложить клиент на разбор?</summary><p>Да. Кидайте название и версию в комментарии под постами в TG — самые запрашиваемые разбираем в первую очередь.</p></details>
+    <details><summary>Сколько это стоит?</summary><p>Ноль. Все кряки SourceHunters бесплатны.</p></details>
   </div>
-</section>
 </main>
 
 <footer>
   <div class="container foot">
-    <span>© 2026 <b>SOURCEHUNTERS</b> — hunting sources since day one</span>
-    <span class="foot-links">
-      <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a>
-      <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a>
-    </span>
+    <span>© 2026 sourcehunters — reverse engineering team</span>
+    <span class="foot-r"><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a></span>
   </div>
 </footer>
 

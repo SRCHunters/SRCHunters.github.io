@@ -3,115 +3,74 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SourceHunters — Reverse Engineering Team</title>
-<meta name="description" content="SourceHunters — команда реверс-инженеров. Открой проводник: Arsenal, Releases, Media, Downloads." />
+<title>SourceHunters — reverse engineering team</title>
+<meta name="description" content="SourceHunters — команда реверс-инженеров. Unpack, деобфускация и обход авторизации чит-клиентов Minecraft." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2304070e'/><circle cx='16' cy='16' r='7' fill='none' stroke='%237dd3fc' stroke-width='2.4'/><circle cx='16' cy='16' r='2' fill='%2338bdf8'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0d12'/><path d='M9 11l6 5-6 5M16 21h7' fill='none' stroke='%236cb4f0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 </head>
 <body>
 
-<canvas id="bg"></canvas>
-<div class="aurora a1"></div>
-<div class="aurora a2"></div>
-<div class="aurora a3"></div>
-
-<header class="nav" id="nav">
-  <div class="container nav-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-dot"></span>
-      <span class="logo-text">SOURCEHUNTERS</span>
-    </a>
+<header class="top">
+  <div class="container top-in">
+    <a href="index.html" class="brand"><span class="brand-prompt">~$</span> sourcehunters<span class="dim">/re</span></a>
     <nav class="links" id="navLinks">
-      <a href="#home" class="active">Главная</a>
-      <a href="#explorer">Проводник</a>
+      <a href="arsenal.html">methodology</a>
+      <a href="releases.html">releases</a>
+      <a href="media.html">media</a>
+      <a href="downloads.html">downloads</a>
     </nav>
-    <div class="nav-right">
-      <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener" class="btn btn-small">Telegram</a>
+    <div class="top-right">
+      <span class="ver">v2026.09</span>
       <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main>
-<!-- ГЛАВНОЕ ОКНО -->
-<section class="hero container" id="home">
-  <div class="hero-left">
-    <span class="chip"><span class="pulse"></span> reverse engineering team</span>
-    <h1>SOURCEHUNTING<br><span class="grad">| CRACKHUNTING</span></h1>
-    <p class="subtitle">SourceHunters — охотники за исходниками. Берём защищённые чит-клиенты Minecraft, снимаем протекторы и выпускаем чистые кряки. Быстро. Громко. Бесплатно.</p>
-    <div class="hero-btns">
-      <a href="#explorer" class="btn btn-primary">Открыть проводник ↓</a>
-      <a href="downloads.html" class="btn btn-ghost">Забрать файлы</a>
+<main class="container">
+  <section class="hero" id="home">
+    <p class="kicker">// reverse-engineering team — minecraft java clients</p>
+    <h1>SourceHunters</h1>
+    <p class="lede">Разбираем защищённые чит-клиенты: снимаем упаковщики, чистим обфускацию, патчим проверки лицензии и HWID. Публикуем чистые билды с разбором внутренностей.</p>
+    <div class="actions">
+      <a href="releases.html" class="btn btn-solid">Browse releases</a>
+      <a href="arsenal.html" class="btn">Methodology</a>
     </div>
-    <div class="stats">
-      <div class="stat"><b>06</b><span>направлений взлома</span></div>
-      <div class="stat"><b>24/7</b><span>разбор клиентов</span></div>
-      <div class="stat"><b>100%</b><span>бесплатно</span></div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="win w1">
-      <div class="win-bar"><span class="win-title">unpack.exe</span><span class="win-x">—</span></div>
-      <p class="mono">client-obf.jar → deobfuscated</p>
-      <div class="progress"><i style="width:92%"></i></div>
-      <p class="mono dim">4 812 strings decrypted…</p>
-    </div>
-    <div class="win w2">
-      <div class="win-bar"><span class="win-title">auth_check</span><span class="ok-badge">bypassed</span></div>
-      <p class="mono big">HWID bind <span class="strike">removed</span> <span class="ok">✔</span></p>
-      <p class="mono dim">license server: no response needed</p>
-    </div>
-    <div class="win w3">
-      <span class="pulse"></span>
-      <p class="mono"><b>hunters</b> online · свежий кряк в TG</p>
-    </div>
-  </div>
-</section>
+    <dl class="meta">
+      <div><dt>target</dt><dd>minecraft: java edition cheat clients</dd></div>
+      <div><dt>techniques</dt><dd>unpack · deobfuscation · auth bypass · hwid reset</dd></div>
+      <div><dt>artifacts</dt><dd>clean builds + source drops</dd></div>
+      <div><dt>price</dt><dd>free, no keys, no HWID locks</dd></div>
+    </dl>
+  </section>
 
-<!-- ПРОВОДНИК -->
-<section class="container section" id="explorer">
-  <span class="chip">проводник</span>
-  <h2 class="sec-title">ВЫБЕРИ <span class="grad">ОКНО</span></h2>
-  <p class="sec-sub">Каждый раздел откроется в отдельном окне.</p>
-  <div class="explorer">
-    <a href="arsenal.html" class="tile reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>
-      <h3>Arsenal</h3>
-      <p>Как это происходит: unpack, bypass, аудит</p>
-      <span class="go">открыть →</span>
-    </a>
-    <a href="releases.html" class="tile reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
-      <h3>Releases</h3>
-      <p>Lead Releases: свежие кряки с датами</p>
-      <span class="go">открыть →</span>
-    </a>
-    <a href="media.html" class="tile reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
-      <h3>Media</h3>
-      <p>Наш Telegram: новости и разборы</p>
-      <span class="go">открыть →</span>
-    </a>
-    <a href="downloads.html" class="tile reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-      <h3>Downloads</h3>
-      <p>GitHub: релизы, исходники и FAQ</p>
-      <span class="go">открыть →</span>
-    </a>
-  </div>
-</section>
+  <section class="block" id="index">
+    <h2><span class="hnum">01</span> Index</h2>
+    <nav class="toc">
+      <a href="arsenal.html"><span class="t-no">01</span><span class="t-name">methodology</span><span class="t-desc">как разбираем клиент — по шагам, с примерами</span><span class="t-go">→</span></a>
+      <a href="releases.html"><span class="t-no">02</span><span class="t-name">releases</span><span class="t-desc">таблица кряков: билд, версия, дата публикации</span><span class="t-go">→</span></a>
+      <a href="media.html"><span class="t-no">03</span><span class="t-name">media</span><span class="t-desc">telegram-канал: разборы и анонсы релизов</span><span class="t-go">→</span></a>
+      <a href="downloads.html"><span class="t-no">04</span><span class="t-name">downloads</span><span class="t-desc">github: файлы, исходники, faq</span><span class="t-go">→</span></a>
+    </nav>
+  </section>
+
+  <section class="block" id="pipeline">
+    <h2><span class="hnum">02</span> Pipeline</h2>
+<pre class="code"><span class="c-dim">$</span> sh-pipeline --target client-obf.jar
+<span class="c-ok">[1/4]</span> unpack            ............ <span class="c-ok">done</span>   <span class="c-dim">protector removed</span>
+<span class="c-ok">[2/4]</span> deobfuscate       ............ <span class="c-ok">done</span>   <span class="c-dim">4 812 strings recovered</span>
+<span class="c-ok">[3/4]</span> patch auth+hwid   ............ <span class="c-ok">done</span>   <span class="c-dim">2 checks neutralized</span>
+<span class="c-ok">[4/4]</span> audit             ............ <span class="c-ok">clean</span>  <span class="c-dim">no stealer, no miner</span>
+<span class="c-dim">$</span> publish --to telegram,github</pre>
+  </section>
 </main>
 
 <footer>
   <div class="container foot">
-    <span>© 2026 <b>SOURCEHUNTERS</b> — hunting sources since day one</span>
-    <span class="foot-links">
-      <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a>
-      <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a>
-    </span>
+    <span>© 2026 sourcehunters — reverse engineering team</span>
+    <span class="foot-r"><a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a><a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a></span>
   </div>
 </footer>
 
