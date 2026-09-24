@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arsenal — SourceHunters</title>
+<meta name="description" content="Арсенал SourceHunters: unpack, auth bypass, HWID reset, аудит, clean builds, unlock." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2304070e'/><circle cx='16' cy='16' r='7' fill='none' stroke='%237dd3fc' stroke-width='2.4'/><circle cx='16' cy='16' r='2' fill='%2338bdf8'/></svg>">
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<div class="aurora a1"></div>
+<div class="aurora a2"></div>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-dot"></span>
+      <span class="logo-text">SOURCEHUNTERS</span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html#explorer" class="btn btn-small">‹ Проводник</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container crumbs"><a href="index.html">Главная</a> / <a href="index.html#explorer">Проводник</a> / <b>Arsenal</b></div>
+
+<section class="container section" id="arsenal">
+  <span class="chip">наш арсенал</span>
+  <h2 class="sec-title">КАК ЭТО <span class="grad">ПРОИСХОДИТ</span></h2>
+  <div class="cards" style="margin-top:30px">
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span>
+      <h3>Unpack</h3><p>Сносим упаковщики с .jar, чистим мусорный control-flow, возвращаем читаемый код.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.8-1.3"/></svg></span>
+      <h3>Auth Bypass</h3><p>Патчим проверки ключа и эмуляцию сервера лицензии. Киков больше нет.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M9 20h6M12 16v4"/></svg></span>
+      <h3>HWID Reset</h3><p>Режем привязку к железу, сбрасываем лимиты и баны по железу.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M13 4l-2 16"/></svg></span>
+      <h3>Аудит начинки</h3><p>Палево: стилер? майнер? Разбираем клиент по строкам и импортам.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <h3>Clean Builds</h3><p>Каждый релиз проверяем на вирусы. Никаких майнеров — только кряк.</p>
+    </div>
+    <div class="card reveal">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+      <h3>Unlock</h3><p>Открываем премиум-модули, конфиги и вкладки без всякого ключа.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <span>© 2026 <b>SOURCEHUNTERS</b> — hunting sources since day one</span>
+    <span class="foot-links">
+      <a href="https://t.me/NetCrackHunter" target="_blank" rel="noopener">telegram</a>
+      <a href="https://github.com/NetworkCrackHunter/" target="_blank" rel="noopener">github</a>
+    </span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

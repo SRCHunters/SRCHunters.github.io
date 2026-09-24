@@ -97,6 +97,22 @@ h1{font-family:'Unbounded';font-weight:900;font-size:clamp(30px,4.6vw,56px);line
 .mini-arrow{margin-left:auto;font-size:22px;color:var(--sky);transition:.25s}
 .mini:hover .mini-arrow{transform:translateX(6px)}
 
+/* explorer */
+.explorer{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:6px}
+.tile{display:block;text-decoration:none;color:var(--txt);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px 30px;backdrop-filter:blur(12px);transition:.3s;position:relative;overflow:hidden}
+.tile::after{content:'';position:absolute;top:0;left:30px;right:30px;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0;transition:.3s}
+.tile:hover{transform:translateY(-7px);border-color:#38bdf855;box-shadow:0 24px 60px #00000099,0 0 40px #0ea5e922}
+.tile:hover::after{opacity:1}
+.tile svg{width:40px;height:40px;color:var(--sky);margin-bottom:16px;display:block}
+.tile h3{font-family:'Unbounded';font-size:20px;margin-bottom:8px}
+.tile p{color:var(--mut);font-size:14px;line-height:1.6;margin-bottom:16px}
+.tile .go{font-size:13px;font-weight:700;color:var(--sky)}
+
+/* crumbs */
+.crumbs{padding-top:26px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mut)}
+.crumbs a{color:var(--sky);text-decoration:none}
+.crumbs b{color:var(--txt)}
+
 /* lead releases */
 .rels{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .rel{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;backdrop-filter:blur(12px);transition:.3s;display:flex;flex-direction:column}
@@ -130,7 +146,7 @@ footer{border-top:1px solid var(--line);margin-top:30px;background:#020409cc}
 /* ADAPTIVE */
 @media(max-width:940px){
   .hero{grid-template-columns:1fr;padding-top:48px}
-  .cards,.duo{grid-template-columns:1fr 1fr}
+  .cards,.duo,.explorer{grid-template-columns:1fr 1fr}
   .rels{grid-template-columns:1fr 1fr}
   .links{position:fixed;top:70px;left:0;right:0;background:#04070ef8;flex-direction:column;padding:18px;gap:6px;border-bottom:1px solid var(--line);display:none;text-align:center}
   .links.open{display:flex}
@@ -138,7 +154,7 @@ footer{border-top:1px solid var(--line);margin-top:30px;background:#020409cc}
   .w2{margin-left:0}.w3{margin-left:0}
 }
 @media(max-width:600px){
-  .cards,.duo,.rels{grid-template-columns:1fr}
+  .cards,.duo,.rels,.explorer{grid-template-columns:1fr}
   .hero-btns .btn{width:100%}
   h1{font-size:36px}
 }
